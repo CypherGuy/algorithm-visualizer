@@ -112,6 +112,7 @@ def main():
     ascending = True
 
     from algorithms.bubbleSort import bubbleSortAlgorithm
+    from algorithms.insertionSort import insertionSortAlgorithm
 
     sorting_algorithm = bubbleSortAlgorithm
     sorting_algorithm_name = "Bubble Sort"
@@ -145,6 +146,12 @@ def main():
                     ascending = True
                 elif event.key == pygame.K_d and not sorting:
                     ascending = False
+                elif event.key == pygame.K_i and not sorting:
+                    sorting_algorithm = insertionSortAlgorithm
+                    sorting_algorithm_name = "Insertion Sort"
+                elif event.key == pygame.K_b and not sorting:
+                    sorting_algorithm = bubbleSortAlgorithm
+                    sorting_algorithm_name = "Bubble Sort"
 
 
 if __name__ == "__main__":
