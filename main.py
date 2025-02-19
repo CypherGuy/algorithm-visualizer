@@ -57,7 +57,7 @@ def draw(draw_info, algo_name, ascending):
         controls, (draw_info.width/2 - controls.get_width()/2, 45))
 
     sorting = draw_info.FONT.render(
-        "I - Insertion Sort | B - Bubble Sort", 1, draw_info.BLACK)
+        "I - Insertion Sort | B - Bubble Sort | S - Selection Sort", 1, draw_info.BLACK)
     draw_info.window.blit(
         sorting, (draw_info.width/2 - sorting.get_width()/2, 75))
 
@@ -113,6 +113,7 @@ def main():
 
     from algorithms.bubbleSort import bubbleSortAlgorithm
     from algorithms.insertionSort import insertionSortAlgorithm
+    from algorithms.selectionSort import selectionSortAlgorithm
 
     sorting_algorithm = bubbleSortAlgorithm
     sorting_algorithm_name = "Bubble Sort"
@@ -152,6 +153,9 @@ def main():
                 elif event.key == pygame.K_b and not sorting:
                     sorting_algorithm = bubbleSortAlgorithm
                     sorting_algorithm_name = "Bubble Sort"
+                elif event.key == pygame.K_s and not sorting:
+                    sorting_algorithm = selectionSortAlgorithm
+                    sorting_algorithm_name = "Selection Sort"
 
 
 if __name__ == "__main__":
